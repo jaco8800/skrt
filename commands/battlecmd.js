@@ -88,7 +88,7 @@ module.exports.run = async (bot, message, args) => {
         const intPointsToAdd = parseInt(args[1]);
         const pointstoadd = Math.ceil(intPointsToAdd);
         const pointstoremove = Math.ceil((args[1]));
-        
+
         //+
         Points.findOne({
           userID: message.author.id,
