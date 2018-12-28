@@ -19,7 +19,7 @@ module.exports.run = async (bot, message, args) => {
     if (!points) {
       embed.addField("Points", "0", true);
     } else {
-      embed.addField("Points", Math.ceil(points.points), true);
+      embed.addField("Points", points.points, true);
     }
     embed.addField("Earn points by messaging and through mini-games", `see ${botconfig.prefix}pointshelp`);
 

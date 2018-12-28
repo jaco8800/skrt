@@ -54,6 +54,17 @@ module.exports.run = async (bot, message, args) => {
     return message.channel.send(`Not enough points. Type ${botconfig.prefix}pointshelp to learn how to earn points.`);
   }
 
+  const targetEnoughPoints = await Points.findOne({
+    userID: player2_ID,
+    serverID: message.guild.id
+  });
+
+  if (!targetEnoughPoints) {
+    return message.channel.send(`${player2.id} doesn't have enough points.`);
+  } else if (targetEnoughPoints.points < args[1]) {
+    return message.channel.send(`${player2} doesn't have enough points.`);
+  }
+
   const filter = m => m.author.id === player2.user.id;
 
   message.channel.send(player2 + ", you have been challenged by " + player1.username + ". Type 'accept' to accept the challenge. Will expire in 30 seconds.").then(r => r.delete(30000));
@@ -88,7 +99,7 @@ module.exports.run = async (bot, message, args) => {
         const intPointsToAdd = parseInt(args[1]);
         const pointstoadd = Math.ceil(intPointsToAdd);
         const pointstoremove = Math.ceil((args[1]));
-
+        
         //+
         Points.findOne({
           userID: message.author.id,
@@ -184,29 +195,6 @@ module.exports.run = async (bot, message, args) => {
         message.channel.send("Tie.");
       }
 
-      setTimeout(function notBelowZero() {
-        Points.findOne({
-          userID: player2_ID,
-          serverID: message.guild.id
-        }, (err, points) => {
-          if (err) console.log(err);
-          if (points.points < 0) {
-            points.points = 0;
-            points.save().catch(err => console.log(err));
-          }
-        });
-
-        Points.findOne({
-          userID: message.author.id,
-          serverID: message.guild.id
-        }, (err, points) => {
-          if (err) console.log(err);
-          if (points.points < 0) {
-            points.points = 0;
-            points.save().catch(err => console.log(err));
-          }
-        });
-      }, 3000);
     } else if (collected.first().content === "deny") {
       message.channel.send("Denied.").then(m => m.delete(10000));
     }

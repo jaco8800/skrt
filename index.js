@@ -52,7 +52,7 @@ bot.on("message", async message => {
     const commandfile = bot.commands.get(cmd.slice(prefix.length));
     if (commandfile) commandfile.run(bot, message, args);
   } else {
-    const pointsToAdd = 0.5;
+    const pointsToAdd = 1;
     Points.findOne({
       userID: message.author.id,
       serverID: message.guild.id
