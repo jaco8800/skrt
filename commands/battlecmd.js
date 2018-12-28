@@ -50,7 +50,7 @@ module.exports.run = async (bot, message, args) => {
 
   if (!enoughPoints) {
     return message.channel.send(`Not enough points. Type ${botconfig.prefix}pointshelp to learn how to earn points.`);
-  } else if (Math.ceil(enoughPoints.points) < args[1]) {
+  } else if (enoughPoints.points < args[1]) {
     return message.channel.send(`Not enough points. Type ${botconfig.prefix}pointshelp to learn how to earn points.`);
   }
 
