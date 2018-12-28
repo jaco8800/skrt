@@ -37,11 +37,11 @@ Simple FIFA-themed bot made in JavaScript using discord.js. Bot also makes use o
 `$icon` - Icon Pack
 
 ### Points and mini-games
-$battle @user <amount> - pack battle other users by putting points on the line
+`$battle @user <amount>` - pack battle other users by putting points on the line
 
-$gamble <amount> - gamble with your points
+`$gamble <amount>` - gamble with your points
 
-$gift @user <amount> - gift another user some points (you lose points that you gift to others)
+`$gift @user <amount>` - gift another user some points (you lose points that you gift to others)
 
 ### Miscellaneous
 `$help` - Help for TraceBot
