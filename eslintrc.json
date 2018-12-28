@@ -1,3 +1,4 @@
+//My ESLint settings
 {
     "env": {
         "browser": true,
