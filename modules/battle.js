@@ -22,7 +22,6 @@ module.exports.pack = (playersArray, pointsArray) => {
         if (rng <= 20) { //82
             arrpush(players.x82);
             pointsPush(100);
-
         } else if (rng === 30 && doublerng === 8) { //icons
             const iconrng = ran100();
 
