@@ -1,3 +1,0 @@
-cat 100k.txt | cut -d"," -f1 >100_2k.txt
-shuf 100_2k.txt -o s100_2k.txt
-shuf s100_2k.txt -o ss100_2k.txt
