@@ -106,17 +106,8 @@ module.exports.run = async (bot, message, args) => {
           serverID: message.guild.id
         }, (err, points) => {
           if (err) console.log(err);
-          if (!points) {
-            const newPoints = new Points({
-              userID: message.author.id,
-              serverID: message.guild.id,
-              points: pointstoadd
-            });
-
-            newPoints.save().catch(err => console.log(err));
-          } else {
-            points.points = points.points + pointstoadd;
-            points.save().catch(err => console.log(err));
+          points.points = points.points + pointstoadd;
+          points.save().catch(err => console.log(err));
           }
         });
 
@@ -126,17 +117,8 @@ module.exports.run = async (bot, message, args) => {
           serverID: message.guild.id
         }, (err, points) => {
           if (err) console.log(err);
-          if (!points) {
-            const newPoints = new Points({
-              userID: player2_ID,
-              serverID: message.guild.id,
-              points: 0
-            });
-
-            newPoints.save().catch(err => console.log(err));
-          } else {
-            points.points = points.points - pointstoremove;
-            points.save().catch(err => console.log(err));
+          points.points = points.points - pointstoremove;
+          points.save().catch(err => console.log(err));
           }
         });
 
@@ -156,16 +138,8 @@ module.exports.run = async (bot, message, args) => {
         }, (err, points) => {
           if (err) console.log(err);
           if (!points) {
-            const newPoints = new Points({
-              userID: player2_ID,
-              serverID: message.guild.id,
-              points: pointstoadd
-            });
-
-            newPoints.save().catch(err => console.log(err));
-          } else {
-            points.points = points.points + pointstoadd;
-            points.save().catch(err => console.log(err));
+          points.points = points.points + pointstoadd;
+          points.save().catch(err => console.log(err));
           }
         });
 
@@ -175,22 +149,12 @@ module.exports.run = async (bot, message, args) => {
           serverID: message.guild.id
         }, (err, points) => {
           if (err) console.log(err);
-          if (!points) {
-            const newPoints = new Points({
-              userID: message.author.id,
-              serverID: message.guild.id,
-              points: 0
-            });
-
-            newPoints.save().catch(err => console.log(err));
-          } else {
-            points.points = points.points - pointstoremove;
-            points.save().catch(err => console.log(err));
+          points.points = points.points - pointstoremove;
+          points.save().catch(err => console.log(err));
           }
         });
 
         message.channel.send({ embed: embed(player2, pointstoadd, pointstoremove, player1) });
-
       } else {
         message.channel.send("Tie.");
       }
