@@ -109,7 +109,7 @@ module.exports.run = async (bot, message, args) => {
           points.points = points.points + pointstoadd;
           points.save().catch(err => console.log(err));
           }
-        });
+        );
 
         //-
         Points.findOne({
@@ -120,7 +120,7 @@ module.exports.run = async (bot, message, args) => {
           points.points = points.points - pointstoremove;
           points.save().catch(err => console.log(err));
           }
-        });
+        );
 
         message.channel.send({ embed: embed(player1, pointstoadd, pointstoremove, player2) });
 
@@ -152,7 +152,7 @@ module.exports.run = async (bot, message, args) => {
           points.points = points.points - pointstoremove;
           points.save().catch(err => console.log(err));
           }
-        });
+        );
 
         message.channel.send({ embed: embed(player2, pointstoadd, pointstoremove, player1) });
       } else {
