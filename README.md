@@ -23,7 +23,7 @@ Simple FIFA-themed bot made in JavaScript using discord.js. Bot also makes use o
 
 `$clear <x>` - clears x messages
 
-`$purge` - use to clear a channel (500 msgs at a time)
+`$purge` - use to clear a channel (500 messages at a time)
 
 ### Packs
 `$twoplayers` - Two Players Pack
@@ -37,7 +37,7 @@ Simple FIFA-themed bot made in JavaScript using discord.js. Bot also makes use o
 `$icon` - Icon Pack
 
 ### Points and mini-games
-`$battle @user <amount>` - pack battle other users by putting points on the line
+`$battle @user <amount>` - start a pack battle vs another user
 
 `$gamble <amount>` - gamble with your points
 
