@@ -1,12 +1,12 @@
 # TraceBot
 First attempt at a Discord bot.
-Simple FIFA-themed bot made in JavaScript using discord.js. Bot also makes use of nodemon, mongoose and MongoDB.
+Simple FIFA-themed bot made in JavaScript using discord.js. Bot also makes use of mongoose and MongoDB.
 
 ## Links
 [Invitation link](https://discordapp.com/oauth2/authorize?&client_id=516328833729953793&scope=bot&permissions=8)
 
 ## Features
-**Moderation.** Simple moderation that includes commands such as kick, ban, clear, purge.
+**Moderation.** Simple moderation that includes commands such as kick, ban, mute, clear.
 
 **FIFA Pack Simulator.** Somewhat accurate FIFA pack simulation.
 
@@ -15,13 +15,13 @@ Simple FIFA-themed bot made in JavaScript using discord.js. Bot also makes use o
 ## All commands
 #### *We are assuming $ is our prefix (see `botconfig.json`)*
 ### Moderation
-`$ban @user <reason>` - bans a user for reason
+`$ban @user <reason>` - bans a user for *reason*
 
-`$kick @user <reason>` - kicks a user for reason
+`$kick @user <reason>` - kicks a user for *reason*
 
 `$mute @user <amount of time>` - mutes a user
 
-`$clear <x>` - clears x messages
+`$clear <x>` - clears *x* messages
 
 `$purge` - use to clear a channel (500 messages at a time)
 
